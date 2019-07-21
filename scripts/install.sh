@@ -12,7 +12,6 @@ case "${unameOut}" in
     *)          os="UNKNOWN:${unameOut}"
 esac
 
-arch=`uname -m`
 url="https://github.com/instrumenta/kubeval/releases/download/${version}/kubeval-${os}-amd64.tar.gz"
 
 if [ "$url" = "" ]
@@ -33,8 +32,6 @@ else
     echo "Need curl or wget"
     exit -1
 fi
-
-pwd
 
 rm -rf bin && mkdir bin && tar xzvf $filename -C bin > /dev/null && rm -f $filename
 
