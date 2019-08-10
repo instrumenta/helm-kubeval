@@ -18,7 +18,8 @@ As an example of usage, here is `helm kubeval` running against one of the stable
 
 ```console
 $ git clone git@github.com:helm/charts.git
-$ helm kubeval charts/stable/nginx-ingress
+$ cd charts/stable/nginx-ingress
+$ helm kubeval
 The file nginx-ingress/templates/serviceaccount.yaml contains a valid ServiceAccount
 The file nginx-ingress/templates/clusterrole.yaml contains a valid ClusterRole
 The file nginx-ingress/templates/clusterrolebinding.yaml contains a valid ClusterRoleBinding
@@ -45,7 +46,7 @@ The file nginx-ingress/templates/udp-configmap.yaml contains an empty YAML docum
 You can also specify a specific Kubernetes version to validate the chart against.
 
 ```
-helm kubeval nginx-ingress -v 1.9.0
+helm kubeval -v 1.9.0
 ```
 
 
