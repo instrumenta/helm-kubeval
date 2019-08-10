@@ -5,6 +5,6 @@ if [[ $1 == "--version" || $1 == "--help" ]]; then
     exit
 fi
 
-render=$(helm template ${1:-.})
+render=$(helm template .)
 
-echo "$render" | $HELM_PLUGIN_DIR/bin/kubeval ${@:2}
+echo "$render" | $HELM_PLUGIN_DIR/bin/kubeval ${@}
