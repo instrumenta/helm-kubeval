@@ -1,5 +1,5 @@
 name: "kubeval"
-version: "0.12.0"
+version: "0.13.0"
 usage: "Validate Helm charts"
 description: |-
   "Validate Helm charts against the Kubernetes schemas"
@@ -10,3 +10,4 @@ hooks:
   update: "cd $HELM_PLUGIN_DIR; ./scripts/install.sh"
 
 useTunnel: false
+ignoreFlags: false
