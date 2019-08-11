@@ -18,8 +18,7 @@ As an example of usage, here is `helm kubeval` running against one of the stable
 
 ```console
 $ git clone git@github.com:helm/charts.git
-$ cd charts/stable/nginx-ingress
-$ helm kubeval
+$ helm kubeval charts/stable/nginx-ingress
 The file nginx-ingress/templates/serviceaccount.yaml contains a valid ServiceAccount
 The file nginx-ingress/templates/clusterrole.yaml contains a valid ClusterRole
 The file nginx-ingress/templates/clusterrolebinding.yaml contains a valid ClusterRoleBinding
@@ -46,8 +45,16 @@ The file nginx-ingress/templates/udp-configmap.yaml contains an empty YAML docum
 You can also specify a specific Kubernetes version to validate the chart against.
 
 ```
-helm kubeval -v 1.9.0
+helm kubeval . -v 1.9.0
 ```
 
+Kubeval has a number of flags which can alter it's behaviour, from ignoring specific resources to
+exiting on the first error to disallowing properties not specified in the schema. Kubeval options
+automatically passed to Kubeval, with any other options being passed to Helm in the same way as
+`helm template`. This means you could set values before validating the chart. eg.
+
+```
+helm kubeval charts/stable/nginx-ingress --set controller.image.tag=latest
+```
 
 
