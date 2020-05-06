@@ -1,7 +1,7 @@
 #! /bin/bash -e
 
 cd $HELM_PLUGIN_DIR
-version="$(cat plugin.yaml | grep "version" | cut -d '"' -f 2)"
+version="${KUBEVAL_VERSION:-$(cat plugin.yaml | grep "version" | cut -d '"' -f 2)}"
 echo "Installing helm-kubeval v${version} ..."
 
 unameOut="$(uname -s)"
