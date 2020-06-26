@@ -21,6 +21,10 @@ do
                 kubeval_options+=("$2")
                 shift 2
                 ;;
+            --)
+                eoo=1
+                shift
+                ;;
             *)
                 helm_options+=("$1")
                 shift
