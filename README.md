@@ -11,6 +11,9 @@ Install the plugin using the built-in plugin manager.
 helm plugin install https://github.com/instrumenta/helm-kubeval
 ```
 
+### Windows
+
+On Windows, you *must* use GitBash to install (since the install script is a ".sh" file)
 
 ## Usage
 
