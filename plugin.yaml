@@ -4,6 +4,10 @@ usage: "Validate Helm charts"
 description: |-
   "Validate Helm charts against the Kubernetes schemas"
 command: "$HELM_PLUGIN_DIR/scripts/run.sh"
+platformCommand:
+  - os: windows
+    arch: amd64
+    command: "powershell -File $HELM_PLUGIN_DIR/scripts/run.ps1 $HELM_PLUGIN_DIR"
 
 hooks:
   install: "cd $HELM_PLUGIN_DIR; ./scripts/install.sh"
