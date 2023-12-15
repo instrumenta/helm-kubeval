@@ -1,4 +1,4 @@
-#! /bin/bash -e
+#!/bin/sh -e
 
 cd $HELM_PLUGIN_DIR
 version="$(cat plugin.yaml | grep "version" | cut -d '"' -f 2)"

@@ -1,4 +1,4 @@
-#! /bin/bash -e
+#!/bin/sh -e
 
 helm_options=()
 kubeval_options=()
